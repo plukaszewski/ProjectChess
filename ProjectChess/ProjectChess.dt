@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-16"?>
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT6M56.4548208S" SolutionTotalViewTime="PT3M32.1996444S" SolutionTotalDebugTime="PT0S">
+  <FileVersion>
+    <Major>1</Major>
+    <Minor>0</Minor>
+  </FileVersion>
+  <SolutionFolder>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess</SolutionFolder>
+  <SolutionCreattionDate>2021-01-08T10:01:50.4775838+01:00</SolutionCreattionDate>
+  <ProjectsCreatedDateList>
+    <ProjectCreated>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-01-08T10:01:20.5516306+01:00</CreatedDate>
+    </ProjectCreated>
+  </ProjectsCreatedDateList>
+  <SessionTimeList />
+  <LastSessionTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT0.7324738S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Scripts\BackgroundRescale.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-01-08T11:13:50.663366+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT47.719292S" EditActiveTime="PT3M28.2115668S">
+      <ModifiedDate>2021-01-08T11:18:05.1520773+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Scripts\MenuManager.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-01-08T11:05:09.2746375+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+  </LastSessionTimeList>
+  <TotalTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT2M44.4853445S" EditActiveTime="PT3M28.243254S">
+      <ModifiedDate>2021-01-08T10:17:39.1074403+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Scripts\BackgroundRescale.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-01-08T10:01:50.5020452+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT47.715298S" EditActiveTime="PT3M28.2115668S">
+      <ModifiedDate>2021-01-08T11:18:05.1520773+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Scripts\MenuManager.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-01-08T11:05:09.2746375+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+  </TotalTimeList>
+  <HistoryTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT0.7324738S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Scripts\BackgroundRescale.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-01-08T11:13:50.663366+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT47.7157972S" EditActiveTime="PT3M28.2115668S">
+      <ModifiedDate>2021-01-08T11:18:05.1520773+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Scripts\MenuManager.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-01-08T11:05:09.2746375+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M43.75337S" EditActiveTime="PT3M28.243254S">
+      <ModifiedDate>2021-01-08T10:17:39.1074403+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Scripts\BackgroundRescale.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-01-08T10:01:50.5020452+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+  </HistoryTimeList>
+</DevTrackerData>
