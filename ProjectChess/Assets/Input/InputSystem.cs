@@ -36,17 +36,17 @@ public class InputSystem : MonoBehaviour
         ClickableObjects.Add(Object);
     }
 
-    public void Unubscribe(IOnMouseEnter Object)
+    public void Unsubscribe(IOnMouseEnter Object)
     {
         OnMouseEnterObjects.Remove(Object);
     }
 
-    public void Unubscribe(IOnMouseExit Object)
+    public void Unsubscribe(IOnMouseExit Object)
     {
         OnMouseExitObjects.Remove(Object);
     }
 
-    public void Unubscribe(IClickable Object)
+    public void Unsubscribe(IClickable Object)
     {
         ClickableObjects.Remove(Object);
     }
@@ -56,7 +56,7 @@ public class InputSystem : MonoBehaviour
     {
         Vector3 Tmp = PublicValues.Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
-        Vector2Int NewMousePosition = new Vector2Int((int)Tmp.x, (int)Tmp.y);
+        Vector2Int NewMousePosition = new Vector2Int(Tmp.x > 0 ? (int)Tmp.x : (int)Tmp.x - 1, Tmp.y > 0 ? (int)Tmp.y : (int)Tmp.y - 1);
 
         if (MousePosition != NewMousePosition)
         {
@@ -77,7 +77,6 @@ public class InputSystem : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log(1);
             foreach (var Item in ClickableObjects)
             {
                 if (Item.GetPosition() == MousePosition)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, IClickable
 {
     public Movement MovementComponent;
-    [SerializeField] private SpriteRenderer Sprite;
+    [SerializeField] public SpriteRenderer Sprite;
     private bool Active;
 
     private void Highlight(bool b)
@@ -24,7 +24,6 @@ public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, ICl
 
     public void OnClick(int Button)
     {
-        Debug.Log(2);
         MovementComponent.Move(new Vector2Int((int)transform.localPosition.x, (int)transform.localPosition.y));
     }
 
@@ -43,12 +42,25 @@ public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, ICl
         return new Vector2Int((int)transform.position.x, (int)transform.position.y);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnDestroy()
+    {
+        PublicValues.InputSystem.Unsubscribe(this as IOnMouseEnter);
+        PublicValues.InputSystem.Unsubscribe(this as IOnMouseExit);
+        PublicValues.InputSystem.Unsubscribe(this as IClickable);
+    }
+
+    private void Awake()
     {
         PublicValues.InputSystem.Subscribe(this as IOnMouseEnter);
         PublicValues.InputSystem.Subscribe(this as IOnMouseExit);
+        PublicValues.InputSystem.Subscribe(this as IClickable);
         Highlight(false);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame

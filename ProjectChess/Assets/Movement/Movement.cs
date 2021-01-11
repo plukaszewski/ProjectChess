@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private GridManager Grid;
-    [SerializeField] private MovementIndicator MovementindicatorPrefab;
+    [SerializeField] public MovementIndicator MovementindicatorPrefab;
     [SerializeField] public MovementPattern Pattern;
     [SerializeField] public Vector2 Offset;
 
@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
         }
     }
 
+    //@TODO: rename
     public void Initialize()
     {
         foreach(var Item in Pattern.ValidSquares)
@@ -29,19 +30,18 @@ public class Movement : MonoBehaviour
         }
     }
 
+
     public void Move(Vector2Int Vector)
     {
-        Debug.Log(2);
         transform.position += new Vector3(Vector.x + Offset.x, Vector.y + Offset.y, 0f);
         End();
     }
 
     private void End()
     {
-        Debug.Log(4);
         foreach (var Item in GetComponentsInChildren<MovementIndicator>())
         {
-            Destroy(Item);
+            Destroy(Item.gameObject);
         }
     }
 
@@ -54,6 +54,9 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Initialize();
+        }
     }
 }
