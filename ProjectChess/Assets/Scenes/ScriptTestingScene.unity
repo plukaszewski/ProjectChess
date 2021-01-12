@@ -446,7 +446,7 @@ MonoBehaviour:
   Grid: {fileID: 0}
   MovementIndicatorPrefab: {fileID: 6804303938943923009, guid: 97a4a6bda343e5145ad717d0ea6a8575,
     type: 3}
-  Pattern: {fileID: 1972194807198021743, guid: 310ae8ff83cb80240a24b9e44e49e88b, type: 3}
+  Pattern: {fileID: 4697599698361382197, guid: 136a81b24313b9a45be5b19a497a6a2e, type: 3}
 --- !u!4 &1016705563
 Transform:
   m_ObjectHideFlags: 0
