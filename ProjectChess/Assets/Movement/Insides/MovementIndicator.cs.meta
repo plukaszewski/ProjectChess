@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 87bdb6134254410498ee4075b53e0448
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - MovementComponent: {instanceID: 0}
+  - MovementIndicatorPrefab: {fileID: 6804303938943923009, guid: 97a4a6bda343e5145ad717d0ea6a8575,
+      type: 3}
+  - Sprite: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
