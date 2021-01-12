@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3964619448005528146}
   - component: {fileID: 2694614152785285914}
   - component: {fileID: 6804303938943923009}
+  - component: {fileID: 1971971368434817972}
   m_Layer: 0
   m_Name: MovementIndicator
   m_TagString: Untagged
@@ -96,3 +97,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementComponent: {fileID: 0}
   Sprite: {fileID: 2694614152785285914}
+--- !u!114 &1971971368434817972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6481493582729496797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2972b76f35edf44b6c8e66ac05ab99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - VisualOnly
+  Validate: 0

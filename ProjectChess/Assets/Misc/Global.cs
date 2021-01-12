@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridManager : MonoBehaviour
+public class Global : MonoBehaviour
 {
-    [SerializeField] Grid Grid;
+    public static Camera Camera;
+    public static InputSystem InputSystem;
+    public static GridManager GridManager;
 
-    private void Awake()
+    public static Vector2Int Vector3ToVector2Int(Vector3 Vector)
     {
-        if(Grid == null)
-        {
-            Grid = GetComponent<Grid>();
-        }
+        return new Vector2Int((int)Vector.x, (int)Vector.y);
     }
 
     // Start is called before the first frame update

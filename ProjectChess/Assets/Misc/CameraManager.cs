@@ -6,7 +6,7 @@ public class CameraManager : MonoBehaviour
 {
     private void Awake()
     {
-        PublicValues.Camera = GetComponent<Camera>();
+        Global.Camera = GetComponent<Camera>();
     }
 
     // Start is called before the first frame update

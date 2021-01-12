@@ -44,17 +44,19 @@ public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, ICl
 
     private void OnDestroy()
     {
-        PublicValues.InputSystem.Unsubscribe(this as IOnMouseEnter);
-        PublicValues.InputSystem.Unsubscribe(this as IOnMouseExit);
-        PublicValues.InputSystem.Unsubscribe(this as IClickable);
+        Global.InputSystem.Unsubscribe(this as IOnMouseEnter);
+        Global.InputSystem.Unsubscribe(this as IOnMouseExit);
+        Global.InputSystem.Unsubscribe(this as IClickable);
     }
 
     private void Awake()
     {
-        PublicValues.InputSystem.Subscribe(this as IOnMouseEnter);
-        PublicValues.InputSystem.Subscribe(this as IOnMouseExit);
-        PublicValues.InputSystem.Subscribe(this as IClickable);
+        Global.InputSystem.Subscribe(this as IOnMouseEnter);
+        Global.InputSystem.Subscribe(this as IOnMouseExit);
+        Global.InputSystem.Subscribe(this as IClickable);
         Highlight(false);
+
+
     }
 
     // Start is called before the first frame update

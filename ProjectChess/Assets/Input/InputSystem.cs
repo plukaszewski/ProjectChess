@@ -18,7 +18,7 @@ public class InputSystem : MonoBehaviour
             Grid = GetComponent<Grid>();
         }
 
-        PublicValues.InputSystem = this;
+        Global.InputSystem = this;
     }
 
     public void Subscribe(IOnMouseEnter Object)
@@ -54,7 +54,7 @@ public class InputSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 Tmp = PublicValues.Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 Tmp = Global.Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
         Vector2Int NewMousePosition = new Vector2Int(Tmp.x > 0 ? (int)Tmp.x : (int)Tmp.x - 1, Tmp.y > 0 ? (int)Tmp.y : (int)Tmp.y - 1);
 
