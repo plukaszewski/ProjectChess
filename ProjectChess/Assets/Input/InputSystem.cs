@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputSystem : MonoBehaviour
 {
-    [SerializeField] private Grid Grid;
+    //[SerializeField] private Grid Grid;
     //[SerializeField] private Vector2Int GridSize;
     private List<IOnMouseEnter> OnMouseEnterObjects = new List<IOnMouseEnter>();
     private List<IOnMouseExit> OnMouseExitObjects = new List<IOnMouseExit>();
@@ -13,11 +13,6 @@ public class InputSystem : MonoBehaviour
 
     private void Awake()
     {
-        if (Grid == null)
-        {
-            Grid = GetComponent<Grid>();
-        }
-
         Global.InputSystem = this;
     }
 
@@ -62,13 +57,13 @@ public class InputSystem : MonoBehaviour
         {
             foreach (var Item in OnMouseExitObjects)
             {
-                if (Item.GetPosition() == MousePosition)
+                if (Item.GetPosition().Contains(MousePosition))
                     Item.OnMouseExit();
             }
 
             foreach (var Item in OnMouseEnterObjects)
             {
-                if (Item.GetPosition() == NewMousePosition)
+                if (Item.GetPosition().Contains(NewMousePosition))
                     Item.OnMouseEnter();
             }
         }
@@ -79,7 +74,7 @@ public class InputSystem : MonoBehaviour
         {
             foreach (var Item in ClickableObjects)
             {
-                if (Item.GetPosition() == MousePosition)
+                if (Item.GetPosition().Contains(MousePosition))
                     Item.OnClick(0);
             }
         }
@@ -88,7 +83,7 @@ public class InputSystem : MonoBehaviour
         {
             foreach (var Item in ClickableObjects)
             {
-                if (Item.GetPosition() == MousePosition)
+                if (Item.GetPosition().Contains(MousePosition))
                     Item.OnClick(1);
             }
         }

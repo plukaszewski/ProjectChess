@@ -37,9 +37,11 @@ public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, ICl
         Highlight(false);
     }
 
-    public Vector2Int GetPosition()
+    public List<Vector2Int> GetPosition()
     {
-        return new Vector2Int((int)transform.position.x, (int)transform.position.y);
+        var Tmp = new List<Vector2Int>();
+            Tmp.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y));
+        return Tmp;
     }
 
     private void OnDestroy()

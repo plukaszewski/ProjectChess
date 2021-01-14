@@ -8,7 +8,9 @@ public class MovementPattern : MonoBehaviour
     {
         foreach (Transform Item in transform)
         {
-            if (Item.GetComponent<MovementPatternSquare>() != null && MovementComponent.Grid.GetComponent<GridManager>().ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + MovementComponent.transform.position), "VisualOnly"))
+            if (Item.GetComponent<MovementPatternSquare>() != null 
+                && Global.GameManager.Level.CurrentRoom.IsInLimits(Global.Vector3ToVector2Int(Item.position + MovementComponent.transform.position))
+                && Global.GridManager.ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + MovementComponent.transform.position), "VisualOnly"))
             {
                 var Tmp = Instantiate(MovementComponent.MovementIndicatorPrefab, Item.position + MovementComponent.transform.position, new Quaternion(), MovementComponent.transform);
                 Tmp.MovementComponent = MovementComponent;
@@ -21,7 +23,9 @@ public class MovementPattern : MonoBehaviour
     {
         foreach (Transform Item in Object)
         {
-            if (Item.GetComponent<MovementPatternSquare>() != null && Indicator.MovementComponent.Grid.GetComponent<GridManager>().ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position), "VisualOnly"))
+            if (Item.GetComponent<MovementPatternSquare>() != null 
+                && Global.GameManager.Level.CurrentRoom.IsInLimits(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position)) 
+                && Global.GridManager.ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position), "VisualOnly"))
             {
                 var Tmp = Instantiate(Indicator.MovementComponent.MovementIndicatorPrefab, Item.position + Indicator.MovementComponent.transform.position, new Quaternion(), Indicator.MovementComponent.transform);
                 Tmp.MovementComponent = Indicator.MovementComponent;

@@ -25,13 +25,13 @@ public class GridManager : MonoBehaviour
         }
         else
         {
-            return null;
+            return new List<GridElement>();
         }
     }
 
     public void AddElement(GridElement Object)
     {
-        if(!Elements.ContainsKey(Object.GetPosition()))
+        if (!Elements.ContainsKey(Object.GetPosition()))
         {
             Elements.Add(Object.GetPosition(), new List<GridElement>());
         }
@@ -77,6 +77,8 @@ public class GridManager : MonoBehaviour
 
         return true;
     }
+
+
 
     // Start is called before the first frame update
     void Start()

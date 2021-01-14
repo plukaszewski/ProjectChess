@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInputSystemInerface
 {
-    Vector2Int GetPosition();
+    List<Vector2Int> GetPosition();
 }

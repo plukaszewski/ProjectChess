@@ -2,22 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Test : MonoBehaviour
 {
-    public Movement Movement;
-
-    private void Awake()
-    {
-        if (Movement == null)
-        {
-            Movement = GetComponent<Movement>();
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log(transform.position);
     }
 
     // Update is called once per frame

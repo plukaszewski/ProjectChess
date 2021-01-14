@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] public GridManager Grid;
     [SerializeField] public MovementIndicator MovementIndicatorPrefab;
     [SerializeField] public MovementPattern Pattern;
 
     //@TODO: rename
     public void Initialize()
     {
+        End();
         Pattern.Spawn(this);
     }
 
@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
         End();
     }
 
-    private void End()
+    public void End()
     {
         foreach (var Item in GetComponentsInChildren<MovementIndicator>())
         {
@@ -34,7 +34,6 @@ public class Movement : MonoBehaviour
 
     private void Awake()
     {
-        Grid = Global.GridManager;
     }
 
     // Start is called before the first frame update

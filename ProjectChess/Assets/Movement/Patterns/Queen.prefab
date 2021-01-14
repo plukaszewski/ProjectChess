@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4082520053800089784}
   - component: {fileID: 4231822044351204582}
   m_Layer: 0
-  m_Name: Bishop 1
+  m_Name: Queen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
