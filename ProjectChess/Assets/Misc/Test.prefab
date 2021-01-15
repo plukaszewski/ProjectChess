@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5540657509660906822}
   - component: {fileID: 5540657509660906821}
   m_Layer: 0
-  m_Name: Chesster
+  m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 78621049515068794, guid: b6fe17d47347bfc458fe7c6efce381e4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 9b9d93d4cf22f92418d6b2d5f6b8d0fa, type: 3}
+  m_Color: {r: 0.13803846, g: 0.8867924, b: 0.24882299, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementIndicatorPrefab: {fileID: 6804303938943923009, guid: 97a4a6bda343e5145ad717d0ea6a8575,
     type: 3}
-  Pattern: {fileID: 7183094892008428171, guid: 6dd737e753fff734cbb291817f8d2acf, type: 3}
+  Pattern: {fileID: 4231822044351204582, guid: 7ee134c4fa4735e44b8aac13305cd176, type: 3}
   OnMove:
     m_PersistentCalls:
       m_Calls: []
