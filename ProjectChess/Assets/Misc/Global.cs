@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Global : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Global : MonoBehaviour
     public static GridManager GridManager;
     public static Grid Grid;
     public static GameManager GameManager;
+    public static Global GlobalObject;
 
     public static Vector2Int Vector3ToVector2Int(Vector3 Vector)
     {
@@ -18,6 +20,18 @@ public class Global : MonoBehaviour
     private void Awake()
     {
         Grid = FindObjectOfType<Grid>();
+        GlobalObject = this;
+    }
+
+    private IEnumerator Delay(UnityAction Function)
+    {
+        yield return new WaitForEndOfFrame();
+        Function.Invoke();
+    }
+
+    public void DelayFunction(UnityAction Function)
+    {
+        StartCoroutine(Delay(Function));
     }
 
     // Start is called before the first frame update

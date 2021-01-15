@@ -52,15 +52,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc2248ecf2e5e6488fd1805e867dcb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ValidSquares:
-  - {x: 1, y: 2}
-  - {x: 2, y: 1}
-  - {x: 2, y: -1}
-  - {x: 1, y: -2}
-  - {x: -1, y: -2}
-  - {x: -2, y: -1}
-  - {x: -2, y: 1}
-  - {x: -1, y: 2}
 --- !u!1001 &961274394861962256
 PrefabInstance:
   m_ObjectHideFlags: 0

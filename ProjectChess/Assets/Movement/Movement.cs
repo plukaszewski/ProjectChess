@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Movement : MonoBehaviour
 {
     [SerializeField] public MovementIndicator MovementIndicatorPrefab;
     [SerializeField] public MovementPattern Pattern;
+
+    public UnityEvent OnMove;
+    public UnityEvent OnCapture;
 
     //@TODO: rename
     public void Initialize()
@@ -14,14 +18,25 @@ public class Movement : MonoBehaviour
         Pattern.Spawn(this);
     }
 
-    //Actual movement, change this function to manage animation, leave current lines
     public void Move(Vector2Int Vector)
     {
-        //move itself
         transform.position += new Vector3(Vector.x, Vector.y, 0f);
 
-        //removing indicators
+        if(Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(transform.position), "Enemy"))
+        {
+            foreach(var Item in Global.GridManager.GetElements(Global.Vector3ToVector2Int(transform.position)))
+            {
+                if(Item.Tags.Contains("Enemy"))
+                {
+                    Destroy(Item.gameObject);
+                    OnCapture.Invoke();
+                }
+            }
+        }
+
         End();
+
+        OnMove.Invoke();
     }
 
     public void End()
