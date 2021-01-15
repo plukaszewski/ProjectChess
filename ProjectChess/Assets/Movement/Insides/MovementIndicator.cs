@@ -14,11 +14,11 @@ public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, ICl
 
         if(b)
         {
-            Sprite.color = new Color(1f, 1f, 1f, .8f);
+            Sprite.color = new Color(Sprite.color.r, Sprite.color.g, Sprite.color.b, .8f);
         }
         else
         {
-            Sprite.color = new Color(1f, 1f, 1f, .4f);
+            Sprite.color = new Color(Sprite.color.r, Sprite.color.g, Sprite.color.b, .4f);
         }
     }
 
