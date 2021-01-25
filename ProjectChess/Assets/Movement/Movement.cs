@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     public void Initialize()
     {
         End();
-        Pattern.Spawn(this);
+        Pattern.Spawn(this, MovementIndicatorPrefab);
     }
 
     public void Move(Vector2Int Vector)

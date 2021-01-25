@@ -119,7 +119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tags:
   - Player
-  - Obstacle
   Validate: 0
 --- !u!114 &5540657509660906821
 MonoBehaviour:
