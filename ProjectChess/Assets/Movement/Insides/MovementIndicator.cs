@@ -7,23 +7,7 @@ public class MovementIndicator : GridIndicator, IClickable, IOnMouseEnter, IOnMo
     public Movement MovementComponent;
     private bool Active;
 
-    public void SpawnChildIndicator(Transform Object, MovementIndicator Indicator)
-    {
-        foreach (Transform Item in Object)
-        {
-            if (Item.GetComponent<MovementPatternSquare>() != null
-                && Global.GameManager.Level.CurrentRoom.IsInLimits(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position))
-                && !Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position), "Obstacle"))
-            {
-                var Tmp = Instantiate(Indicator.MovementComponent.MovementIndicatorPrefab, Item.position + Indicator.MovementComponent.transform.position, new Quaternion(), Indicator.MovementComponent.transform);
-                Tmp.MovementComponent = Indicator.MovementComponent;
-                if (Global.GridManager.ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position), "VisualOnly"))
-                {
-                    SpawnChildIndicator(Item, Tmp);
-                }
-            }
-        }
-    }
+    
 
     protected void Highlight(bool b)
     {
@@ -81,4 +65,22 @@ public class MovementIndicator : GridIndicator, IClickable, IOnMouseEnter, IOnMo
         
 
     }
+
+    //public void SpawnChildIndicator(Transform Object, MovementIndicator Indicator)
+    //{
+    //    foreach (Transform Item in Object)
+    //    {
+    //        if (Item.GetComponent<MovementPatternSquare>() != null
+    //            && Global.GameManager.Level.CurrentRoom.IsInLimits(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position))
+    //            && !Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position), "Obstacle"))
+    //        {
+    //            var Tmp = Instantiate(Indicator.MovementComponent.MovementIndicatorPrefab, Item.position + Indicator.MovementComponent.transform.position, new Quaternion(), Indicator.MovementComponent.transform);
+    //            Tmp.MovementComponent = Indicator.MovementComponent;
+    //            if (Global.GridManager.ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position), "VisualOnly"))
+    //            {
+    //                SpawnChildIndicator(Item, Tmp);
+    //            }
+    //        }
+    //    }
+    //}
 }

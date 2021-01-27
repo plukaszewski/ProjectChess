@@ -87,7 +87,7 @@ public class LevelManager : MonoBehaviour
         CurrentRoom.PlayerSpawn.gameObject.SetActive(false);
         Global.GameManager.Player.Movement.End();
 
-        CurrentRoom.EnableEntrances(false);
+        CurrentRoom.DisableEntrances();
         OnChangeRoom.Invoke();
     }
 

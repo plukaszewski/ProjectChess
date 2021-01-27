@@ -97,6 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GridElement: {fileID: 0}
   Sprite: {fileID: 2694614152785285914}
+  IndicatorTags:
+    BlockedBy:
+    - Obstacle
+    LastStep:
+    - Enemy
   MovementComponent: {fileID: 0}
 --- !u!114 &1971971368434817972
 MonoBehaviour:

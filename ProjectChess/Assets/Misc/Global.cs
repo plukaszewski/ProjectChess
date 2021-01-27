@@ -11,10 +11,16 @@ public class Global : MonoBehaviour
     public static Grid Grid;
     public static GameManager GameManager;
     public static Global GlobalObject;
+    public static AIController AIController;
 
     public static Vector2Int Vector3ToVector2Int(Vector3 Vector)
     {
         return new Vector2Int((int)Vector.x, (int)Vector.y);
+    }
+
+    public static Vector3 Vector2IntToVector3(Vector2Int Vector)
+    {
+        return new Vector3(Vector.x, Vector.y);
     }
 
     private void Awake()

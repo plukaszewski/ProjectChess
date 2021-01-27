@@ -99,7 +99,9 @@ MonoBehaviour:
   GridElement: {fileID: 2725882468737145362}
   MovementPattern: {fileID: 1972194807198021743, guid: 310ae8ff83cb80240a24b9e44e49e88b,
     type: 3}
-  GridIndicatorPrefab: {fileID: 326512555308132909, guid: 17401359a04a6e84ab55d8b62e187116,
+  GridIndicatorPrefabAttack: {fileID: 7521143703987959456, guid: 7a95d0eef3617a94c97a4c35fe04859b,
+    type: 3}
+  GridIndicatorPrefabDefend: {fileID: 326512555308132909, guid: 17401359a04a6e84ab55d8b62e187116,
     type: 3}
 --- !u!114 &2725882468737145362
 MonoBehaviour:

@@ -6,7 +6,17 @@ public class Enemy : MonoBehaviour, IOnMouseEnter, IOnMouseExit
 {
     public GridElement GridElement;
     public MovementPattern MovementPattern;
-    public GridIndicator GridIndicatorPrefab;
+    public GridIndicator GridIndicatorPrefabAttack;
+    public GridIndicator GridIndicatorPrefabDefend;
+
+    private bool bIndicatorsSpawned = false;
+
+    public void Move(Vector2Int Vector)
+    {
+        transform.position += new Vector3(Vector.x, Vector.y, 0f);
+
+        DestroyIndicators();
+    }
 
     public List<Vector2Int> GetPosition()
     {
@@ -22,24 +32,63 @@ public class Enemy : MonoBehaviour, IOnMouseEnter, IOnMouseExit
         return Tmp;
     }
 
-    public void OnMouseEnter()
+    public List<Vector2Int> GetPossibleMovementPositions()
     {
-        End();
-        MovementPattern.Spawn(GridElement, GridIndicatorPrefab);
+        var Tmp = new List<Vector2Int>();
+        foreach (var Item in GetComponentsInChildren<GridIndicator>())
+        {
+            Tmp.Add(Item.GridElement.GetPosition());
+        }
+
+        return Tmp;
     }
 
-    public void OnMouseExit()
+    private void SpawnIndicators()
     {
-        End();
+        DestroyIndicators();
+
+        var AttackIndicators = MovementPattern.GetIndicatorsPositions(GridElement.GetPosition(), GridIndicatorPrefabAttack.IndicatorTags);
+        var DefendIndicators = MovementPattern.GetIndicatorsPositions(GridElement.GetPosition(), GridIndicatorPrefabDefend.IndicatorTags);
+
+        foreach (var Item in AttackIndicators)
+        {
+            Instantiate(GridIndicatorPrefabAttack, Global.Vector2IntToVector3(Item), new Quaternion(), transform);
+            DefendIndicators.Remove(Item);
+        }
+
+        foreach (var Item in DefendIndicators)
+        {
+            Instantiate(GridIndicatorPrefabDefend, Global.Vector2IntToVector3(Item), new Quaternion(), transform);
+        }
+        //MovementPattern.Spawn(GridElement, GridIndicatorPrefab);
     }
 
-    public void End()
+    private void DestroyIndicators()
     {
         foreach (var Item in GetComponentsInChildren<GridIndicator>())
         {
             Destroy(Item.gameObject);
         }
     }
+
+    private void ShowIndicators(bool bVisible)
+    {
+        foreach (var Item in GetComponentsInChildren<GridIndicator>())
+        {
+            Destroy(Item.gameObject);
+        }
+    }
+
+    public void OnMouseEnter()
+    {
+        SpawnIndicators();
+    }
+
+    public void OnMouseExit()
+    {
+        DestroyIndicators();
+    }
+
 
     private void OnDestroy()
     {

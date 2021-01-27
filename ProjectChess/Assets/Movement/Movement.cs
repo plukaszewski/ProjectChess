@@ -5,17 +5,26 @@ using UnityEngine.Events;
 
 public class Movement : MonoBehaviour
 {
+    public class OnCaptureEvent : UnityEvent<Enemy>
+    {
+
+    }
+
     [SerializeField] public MovementIndicator MovementIndicatorPrefab;
-    [SerializeField] public MovementPattern Pattern;
+    [SerializeField] public MovementPattern MovementPattern;
 
     public UnityEvent OnMove;
-    public UnityEvent OnCapture;
+    [SerializeField] public OnCaptureEvent OnCapture = new OnCaptureEvent();
 
     //@TODO: rename
     public void Initialize()
     {
         End();
-        Pattern.Spawn(this, MovementIndicatorPrefab);
+        foreach (var Item in MovementPattern.GetIndicatorsPositions(GetComponent<GridElement>().GetPosition(), MovementIndicatorPrefab.IndicatorTags))
+        {
+            var Tmp = Instantiate(MovementIndicatorPrefab, Global.Vector2IntToVector3(Item), new Quaternion(), transform);
+            Tmp.MovementComponent = this;
+        }
     }
 
     public void Move(Vector2Int Vector)
@@ -28,8 +37,8 @@ public class Movement : MonoBehaviour
             {
                 if(Item.Tags.Contains("Enemy"))
                 {
+                    OnCapture.Invoke(Item.GetComponent<Enemy>());
                     Destroy(Item.gameObject);
-                    OnCapture.Invoke();
                 }
             }
         }

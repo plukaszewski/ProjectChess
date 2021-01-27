@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
         {
             Movement = GetComponent<Movement>();
         }
+
+        Global.GameManager.Player = this;
     }
 
     // Start is called before the first frame update

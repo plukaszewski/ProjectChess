@@ -2,29 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct IndicatorTags
+{
+    public List<string> BlockedBy;
+    public List<string> LastStep;
+}
+
 public class GridIndicator : MonoBehaviour
 {
     public GridElement GridElement;
     public SpriteRenderer Sprite;
+    public IndicatorTags IndicatorTags;
 
-    public virtual void SpawnChildIndicator(Transform Object, GridIndicator Indicator)
-    {
-        foreach (Transform Item in Object)
-        {
-            if (Item.GetComponent<MovementPatternSquare>() != null
-                && Global.GameManager.Level.CurrentRoom.IsInLimits(Global.Vector3ToVector2Int(Item.position + GridElement.transform.position))
-                && !Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(Item.position + GridElement.transform.position), "Obstacle")
-                && !Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(Item.position + GridElement.transform.position), "Enemy"))
-            {
-                var Tmp = Instantiate(this, Item.position + GridElement.transform.position, new Quaternion(), GridElement.transform);
-                Tmp.GridElement = Indicator.GridElement;
-                if (Global.GridManager.ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + GridElement.transform.position), "VisualOnly"))
-                {
-                    SpawnChildIndicator(Item, Tmp);
-                }
-            }
-        }
-    }
 
     public List<Vector2Int> GetPosition()
     {
@@ -32,6 +22,25 @@ public class GridIndicator : MonoBehaviour
         Tmp.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y));
         return Tmp;
     }
+
+    //public virtual void SpawnChildIndicator(Transform Object, GridIndicator Indicator)
+    //{
+    //    foreach (Transform Item in Object)
+    //    {
+    //        if (Item.GetComponent<MovementPatternSquare>() != null
+    //            && Global.GameManager.Level.CurrentRoom.IsInLimits(Global.Vector3ToVector2Int(Item.position + GridElement.transform.position))
+    //            && !Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(Item.position + GridElement.transform.position), "Obstacle")
+    //            && !Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(Item.position + GridElement.transform.position), "Enemy"))
+    //        {
+    //            var Tmp = Instantiate(this, Item.position + GridElement.transform.position, new Quaternion(), GridElement.transform);
+    //            Tmp.GridElement = Indicator.GridElement;
+    //            if (Global.GridManager.ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + GridElement.transform.position), "VisualOnly"))
+    //            {
+    //                SpawnChildIndicator(Item, Tmp);
+    //            }
+    //        }
+    //    }
+    //}
 
     // Start is called before the first frame update
     void Start()
