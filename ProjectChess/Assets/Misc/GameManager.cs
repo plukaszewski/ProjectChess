@@ -8,27 +8,27 @@ public class GameManager : MonoBehaviour
     public LevelManager Level;
     public PlayerController Player;
 
-    private bool AreAllEnemiesInCurrentRoomDefeted()
-    {
-        if (Level.CurrentRoom.GetComponentsInChildren<Enemy>().Length > 0)
-        {
-            return false;
-        }
-        return true;
-    }
+    //private bool AreAllEnemiesInCurrentRoomDefeted()
+    //{
+    //    if (Level.CurrentRoom.GetComponentsInChildren<Enemy>().Length > 0)
+    //    {
+    //        return false;
+    //    }
+    //    return true;
+    //}
 
-    private void _CheckForEnemies()
-    {
-        if (AreAllEnemiesInCurrentRoomDefeted())
-        {
-            Level.CurrentRoom.EnableEntrances(true);
-        }
-    }
+    //private void _CheckForEnemies()
+    //{
+    //    if (AreAllEnemiesInCurrentRoomDefeted())
+    //    {
+    //        Level.CurrentRoom.EnableEntrances(true);
+    //    }
+    //}
 
-    private void CheckForEnemies()
-    {
-        Global.GlobalObject.DelayFunction(_CheckForEnemies);
-    }
+    //private void CheckForEnemies(Enemy Enemy)
+    //{
+    //    Global.GlobalObject.DelayFunction(_CheckForEnemies);
+    //}
 
     private void Awake()
     {
@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     {
         Player = Instantiate(Player, Level.Rooms[0].transform.position, new Quaternion());
         Global.GridManager = Level.Rooms[0].GetComponent<GridManager>();
-        Player.Movement.OnCapture.AddListener(CheckForEnemies);
-        Level.OnChangeRoom.AddListener(CheckForEnemies);
+        //Player.Movement.OnCapture.AddListener(CheckForEnemies);
+        //Level.OnChangeRoom.AddListener(CheckForEnemies);
     }
 
     // Update is called once per frame

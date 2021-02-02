@@ -95,8 +95,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bdb6134254410498ee4075b53e0448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementComponent: {fileID: 0}
+  GridElement: {fileID: 0}
   Sprite: {fileID: 2694614152785285914}
+  IndicatorTags:
+    BlockedBy:
+    - Obstacle
+    LastStep:
+    - Enemy
+  MovementComponent: {fileID: 0}
 --- !u!114 &1971971368434817972
 MonoBehaviour:
   m_ObjectHideFlags: 0

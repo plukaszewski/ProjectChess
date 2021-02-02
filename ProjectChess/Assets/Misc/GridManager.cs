@@ -60,6 +60,27 @@ public class GridManager : MonoBehaviour
         return false;
     }
 
+    public bool ContainsElementWithTags(Vector2Int Position, List<string> Tags)
+    {
+        if(Tags.Count == 0)
+        {
+            return false;
+        }
+
+        foreach (var Item in GetElements(Position))
+        {
+            foreach (var Tag in Tags)
+            {
+                if (Item.Tags.Contains(Tag))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     public bool ContainsNoElementsWithOtherTag(Vector2Int Position, string Tag)
     {
         if(GetElements(Position) == null)
@@ -78,6 +99,26 @@ public class GridManager : MonoBehaviour
         return true;
     }
 
+    public bool ContainsNoElementsWithOtherTags(Vector2Int Position, List<string> Tags)
+    {
+        if (GetElements(Position) == null)
+        {
+            return true;
+        }
+
+        foreach (var Item in GetElements(Position))
+        {
+            foreach (var Tag in Tags)
+            {
+                if (!Item.Tags.Contains(Tag))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
 
 
     // Start is called before the first frame update

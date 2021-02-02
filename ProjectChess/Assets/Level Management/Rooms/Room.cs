@@ -21,14 +21,26 @@ public class Room : MonoBehaviour
         return true;
     }
 
-    public void EnableEntrances(bool b)
+    public void EnableEntrances()
+    {
+        foreach (var Item in Entrances)
+        {
+            if (Item != null)
+            {
+                Item.SetActive(true);
+                Item.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void DisableEntrances()
     {
         foreach(var Item in Entrances)
         {
             if(Item != null)
             {
-                Item.SetActive(b);
-                Item.gameObject.SetActive(b);
+                Item.SetActive(false);
+                Item.gameObject.SetActive(false);
             }
         }
     }
@@ -42,14 +54,5 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            EnableEntrances(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            EnableEntrances(false);
-        }
     }
 }
