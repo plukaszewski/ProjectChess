@@ -27,8 +27,7 @@ public class Room : MonoBehaviour
         {
             if (Item != null)
             {
-                Item.SetActive(true);
-                Item.gameObject.SetActive(true);
+                Item.Open();
             }
         }
     }
@@ -39,8 +38,7 @@ public class Room : MonoBehaviour
         {
             if(Item != null)
             {
-                Item.SetActive(false);
-                Item.gameObject.SetActive(false);
+                Item.Close();
             }
         }
     }

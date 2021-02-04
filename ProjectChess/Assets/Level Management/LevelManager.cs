@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public List<Room> Rooms = new List<Room>();
     public Room[] RoomsPrefabs;
+    public Room StartingRoomPrefabs;
     public Vector2Int Size;
     public Vector2Int Offset;
     public Room CurrentRoom;
@@ -46,10 +47,18 @@ public class LevelManager : MonoBehaviour
 
     private void GenerateRomms()
     {
-        for(int i = 0; i < Size.x * Size.y; i++)
+        for (int i = 0; i < Size.x * Size.y; i++)
         {
             var Tmp = IndexToPosition(i);
-            Rooms.Add(Instantiate(RoomsPrefabs[Random.Range(0, RoomsPrefabs.Length)], new Vector3(Tmp.x * Offset.x, Tmp.y * Offset.y, 0f), new Quaternion()));
+
+            if(i == 0)
+            {
+                Rooms.Add(Instantiate(StartingRoomPrefabs, new Vector3(), new Quaternion()));
+            }
+            else
+            {
+                Rooms.Add(Instantiate(RoomsPrefabs[Random.Range(0, RoomsPrefabs.Length)], new Vector3(Tmp.x * Offset.x, Tmp.y * Offset.y, 0f), new Quaternion()));
+            }
 
             Rooms[i].Position = IndexToPosition(i);
 
@@ -82,7 +91,7 @@ public class LevelManager : MonoBehaviour
     public void ChangeRoom(Room NewRoom)
     {
         CurrentRoom = NewRoom;
-        Global.Camera.transform.position = new Vector3(CurrentRoom.transform.position.x, CurrentRoom.transform.position.y, Global.Camera.transform.position.z);
+        Global.Camera.transform.position = new Vector3(CurrentRoom.transform.position.x, CurrentRoom.transform.position.y + .5f, Global.Camera.transform.position.z);
         Global.GameManager.Player.transform.position = CurrentRoom.PlayerSpawn.transform.position;
         Global.GameManager.Player.GetComponent<GridElement>().UpdateInGridManager();
         CurrentRoom.PlayerSpawn.gameObject.SetActive(false);
