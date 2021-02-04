@@ -24,7 +24,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(""); // Load Main level
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ScriptTestingScene"); // Load Main level
     }
 
     public void MainMenuButton()

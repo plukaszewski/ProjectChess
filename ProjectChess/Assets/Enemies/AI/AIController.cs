@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    AudioManager audioManager;
-
     public List<Enemy> Enemies = new List<Enemy>();
     public int MovesPerTurn = 2;
     private int Iterator = 0;
@@ -39,7 +37,7 @@ public class AIController : MonoBehaviour
 
     private void OnCapture(Enemy Enemy)
     {
-        audioManager.PlaySound(Enemy.deathSound);
+        AudioManager.instance.PlaySound("DeathSound");
 
         Enemies.Remove(Enemy);
         if(!AnyEnemiesLeft())

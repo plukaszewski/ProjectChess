@@ -204,12 +204,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 132443934}
-        m_MethodName: 
+      - m_Target: {fileID: 651050698}
+        m_MethodName: PlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
         type: 3}
@@ -458,6 +458,66 @@ PrefabInstance:
     - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
         type: 3}
       propertyPath: sounds.Array.data[1].pitchRand
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: DeathSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: df729d213c4be44a9b55cd109f5cd4f9, type: 3}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[2].volumeRand
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[2].pitchRand
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[3].name
+      value: RoomChange
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[3].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[3].volumeRand
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[3].pitchRand
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5314707319165371989, guid: 55302876a7377ee44936f5e7202a4071,
