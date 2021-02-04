@@ -95,6 +95,7 @@ public class LevelManager : MonoBehaviour
         Global.GameManager.Player.transform.position = CurrentRoom.PlayerSpawn.transform.position;
         Global.GameManager.Player.GetComponent<GridElement>().UpdateInGridManager();
         CurrentRoom.PlayerSpawn.gameObject.SetActive(false);
+        AudioManager.instance.PlaySound("RoomChange");
 
         CurrentRoom.DisableEntrances();
         OnChangeRoom.Invoke();

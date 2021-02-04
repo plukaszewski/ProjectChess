@@ -103,6 +103,7 @@ MonoBehaviour:
     type: 3}
   GridIndicatorPrefabDefend: {fileID: 326512555308132909, guid: 17401359a04a6e84ab55d8b62e187116,
     type: 3}
+  deathSound: DeathSound
 --- !u!114 &2725882468737145362
 MonoBehaviour:
   m_ObjectHideFlags: 0

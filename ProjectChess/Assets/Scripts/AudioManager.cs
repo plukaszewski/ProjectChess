@@ -6,10 +6,10 @@ public class Sound
     public string name;
     public AudioClip clip;
 
-    [Range(0f, 1f)]
+    [Range(0f, 1.0f)]
     public float volume = 0.7f;
     [Range(0.5f, 1.5f)]
-    public float pitch = 1f;
+    public float pitch = 1.0f;
 
     [Range(0f, 0.5f)]
     public float volumeRand = 0.1f;
@@ -27,12 +27,12 @@ public class Sound
         source.loop = loop;
     }
 
-    public void Play()
+    public void Stop()
     {
         source.Stop();
     }
 
-    public void Stop()
+    public void Play()
     {
         source.volume = volume * (1 + Random.Range(-volumeRand / 2f, volumeRand / 2f));
         source.pitch = pitch * (1 + Random.Range(-pitchRand / 2f, pitchRand / 2f));
@@ -69,12 +69,12 @@ public class AudioManager : MonoBehaviour
     {
         for(int i=0; i < sounds.Length; i++)
         {
-            GameObject _go = new GameObject("Sound_" + 1 + "_" + sounds[i].name);
+            GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
             _go.transform.SetParent(this.transform);
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
 
-        PlaySound("Sound");
+        PlaySound("Soundtrack");
     }
 
     public void PlaySound(string _name)
