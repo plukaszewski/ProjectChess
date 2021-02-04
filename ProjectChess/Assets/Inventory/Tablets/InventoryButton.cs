@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InventoryButton : MonoBehaviour
 {
@@ -20,8 +21,11 @@ public class InventoryButton : MonoBehaviour
             {
                 _CurrentCharges = value;
             }
+            ChargesChange.Invoke();
         }
     }
+
+    public UnityEvent ChargesChange;
 
     public void Select()
     {

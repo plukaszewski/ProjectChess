@@ -98,7 +98,15 @@ public class AIController : MonoBehaviour
 
     public void Move(Enemy Enemy)
     {
-        Enemy.Move(CalculateNewPosition(Enemy) - Enemy.GridElement.GetPosition());
+        var Tmp = CalculateNewPosition(Enemy);
+        if (Tmp == null)
+        {
+            MovesPerTurnIterator--;
+        }
+        else
+        {
+            Enemy.Move((Vector2Int)CalculateNewPosition(Enemy) - Enemy.GridElement.GetPosition());
+        }
     }
 
     private List<Vector2Int> TryFunction(UnityAction<List<Vector2Int>, List<Vector2Int>> Func, List<Vector2Int> AvailablePositions)
@@ -208,13 +216,18 @@ public class AIController : MonoBehaviour
         }
     }
 
-    public Vector2Int CalculateNewPosition(Enemy Enemy)
+    public Vector2Int? CalculateNewPosition(Enemy Enemy)
     {
         var ValidPositions = Enemy.MovementPattern.GetIndicatorsPositions(Enemy.GridElement.GetPosition(), Enemy.GridIndicatorPrefabAttack.IndicatorTags);
 
         foreach (var Item in AISteps)
         {
             ValidPositions = TryFunction(Item, ValidPositions);
+        }
+
+        if(ValidPositions.Count == 0)
+        {
+            return null;
         }
 
         return ValidPositions[0];

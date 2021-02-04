@@ -26,6 +26,7 @@ public class GridElement : MonoBehaviour
 
     private void OnValidate()
     {
+        //runInEditMode = false;
         UpdatePosition();
         Validate = false;
     }
