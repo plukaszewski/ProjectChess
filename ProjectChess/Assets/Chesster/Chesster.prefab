@@ -98,9 +98,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementIndicatorPrefab: {fileID: 6804303938943923009, guid: 97a4a6bda343e5145ad717d0ea6a8575,
     type: 3}
-  MovementPattern: {fileID: 1948778820650358219, guid: ec4857fcd536dca4b9262b90c78ec558,
+  MovementPattern: {fileID: 7183094892008428171, guid: 6dd737e753fff734cbb291817f8d2acf,
     type: 3}
+  LastCapturedEnemy: {fileID: 0}
   OnMove:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCapture:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &5540657509660906822

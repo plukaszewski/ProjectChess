@@ -5,19 +5,25 @@ using UnityEngine.Events;
 
 public class Movement : MonoBehaviour
 {
-    public class OnCaptureEvent : UnityEvent<Enemy>
-    {
-
-    }
-
     [SerializeField] public MovementIndicator MovementIndicatorPrefab;
     [SerializeField] public MovementPattern MovementPattern;
+    public Enemy LastCapturedEnemy;
 
     public UnityEvent OnMove;
-    [SerializeField] public OnCaptureEvent OnCapture = new OnCaptureEvent();
+    public UnityEvent OnCapture;
 
     //@TODO: rename
     public void Initialize()
+    {
+        End();
+        foreach (var Item in MovementPattern.GetIndicatorsPositions(GetComponent<GridElement>().GetPosition(), MovementIndicatorPrefab.IndicatorTags))
+        {
+            var Tmp = Instantiate(MovementIndicatorPrefab, Global.Vector2IntToVector3(Item), new Quaternion(), transform);
+            Tmp.MovementComponent = this;
+        }
+    }
+
+    public void Refresh()
     {
         End();
         foreach (var Item in MovementPattern.GetIndicatorsPositions(GetComponent<GridElement>().GetPosition(), MovementIndicatorPrefab.IndicatorTags))
@@ -37,7 +43,8 @@ public class Movement : MonoBehaviour
             {
                 if(Item.Tags.Contains("Enemy"))
                 {
-                    OnCapture.Invoke(Item.GetComponent<Enemy>());
+                    LastCapturedEnemy = Item.GetComponent<Enemy>();
+                    OnCapture.Invoke();
                     Destroy(Item.gameObject);
                 }
             }

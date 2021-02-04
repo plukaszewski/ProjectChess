@@ -17,7 +17,7 @@ public class GridElement : MonoBehaviour
         transform.position = new Vector3((int)transform.position.x, (int)transform.position.y);
     }
 
-    private void UpdateInGridManager()
+    public void UpdateInGridManager()
     {
         Global.GridManager.RemoveElement(this);
         GridPosition = new Vector2Int((int)transform.position.x, (int)transform.position.y);

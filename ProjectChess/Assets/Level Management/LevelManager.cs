@@ -84,8 +84,8 @@ public class LevelManager : MonoBehaviour
         CurrentRoom = NewRoom;
         Global.Camera.transform.position = new Vector3(CurrentRoom.transform.position.x, CurrentRoom.transform.position.y, Global.Camera.transform.position.z);
         Global.GameManager.Player.transform.position = CurrentRoom.PlayerSpawn.transform.position;
+        Global.GameManager.Player.GetComponent<GridElement>().UpdateInGridManager();
         CurrentRoom.PlayerSpawn.gameObject.SetActive(false);
-        Global.GameManager.Player.Movement.End();
 
         CurrentRoom.DisableEntrances();
         OnChangeRoom.Invoke();

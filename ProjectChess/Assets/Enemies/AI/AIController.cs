@@ -7,13 +7,15 @@ public class AIController : MonoBehaviour
 {
     public List<Enemy> Enemies = new List<Enemy>();
     public int MovesPerTurn = 2;
-    public int MoveDelay = 2;
+    public float MoveDelay = .5f;
     private int Iterator = 0;
     private int MovesPerTurnIterator = 0;
     private Enemy CurrentEnemy;
     private List<UnityAction<List<Vector2Int>, List<Vector2Int>>> AISteps = new List<UnityAction<List<Vector2Int>, List<Vector2Int>>>();
 
-    private bool AnyEnemiesLeft()
+    public UnityEvent TurnMade;
+
+    public bool AnyEnemiesLeft()
     {
         if (Enemies.Count == 0)
         {
@@ -40,9 +42,26 @@ public class AIController : MonoBehaviour
         }
     }
 
-    private void OnCapture(Enemy Enemy)
+    private bool CompareEnemy(Enemy Enemy)
     {
-        Enemies.Remove(Enemy);
+        if (Global.GameManager.Player.Movement.LastCapturedEnemy == Enemy)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void OnCapture()
+    {
+        if(Enemies.FindIndex(CompareEnemy) < Iterator)
+        {
+            Iterator--;
+        }
+
+        Enemies.Remove(Global.GameManager.Player.Movement.LastCapturedEnemy);
         if(!AnyEnemiesLeft())
         {
             Global.GlobalObject.DelayFunction(Global.GameManager.Level.CurrentRoom.EnableEntrances);
@@ -51,13 +70,14 @@ public class AIController : MonoBehaviour
     
     public void MakeTurn()
     {
-        if(MovesPerTurnIterator++ < MovesPerTurn)
+        if(MovesPerTurnIterator++ < (MovesPerTurn < Enemies.Count ? MovesPerTurn : Enemies.Count) && AnyEnemiesLeft())
         {
             Global.GlobalObject.DelayFunction(MakeMove, MoveDelay);
         }
         else
         {
             MovesPerTurnIterator = 0;
+            TurnMade.Invoke();
         }
     }
 
@@ -236,7 +256,7 @@ public class AIController : MonoBehaviour
 
     private void Awake()
     {
-        Global.AIController = this;
+        
         AISteps.Add(Capture);
         AISteps.Add(AttackNextMove);
         AISteps.Add(Defend);
@@ -254,6 +274,8 @@ public class AIController : MonoBehaviour
     void Start()
     {
         Global.GlobalObject.DelayFunction(Setup);
+        Global.GameManager.AIController = this;
+
     }
 
     // Update is called once per frame

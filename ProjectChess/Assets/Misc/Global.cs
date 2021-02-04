@@ -11,7 +11,7 @@ public class Global : MonoBehaviour
     public static Grid Grid;
     public static GameManager GameManager;
     public static Global GlobalObject;
-    public static AIController AIController;
+    public static InventoryManager InventoryManager;
 
     public static Vector2Int Vector3ToVector2Int(Vector3 Vector)
     {
