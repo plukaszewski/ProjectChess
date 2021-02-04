@@ -185,21 +185,26 @@ PrefabInstance:
     - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
         type: 3}
       propertyPath: sounds.Array.data[0].name
-      value: ' Sound'
+      value: Soundtrack
       objectReference: {fileID: 0}
     - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
         type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
+      objectReference: {fileID: 8300000, guid: 6a66648467ae5ae4b8609be713326339, type: 3}
     - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
         type: 3}
       propertyPath: sounds.Array.data[0].volume
-      value: 0.47
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
         type: 3}
       propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4714812564386693389, guid: 55302876a7377ee44936f5e7202a4071,
+        type: 3}
+      propertyPath: sounds.Array.data[0].loop
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5314707319165371989, guid: 55302876a7377ee44936f5e7202a4071,

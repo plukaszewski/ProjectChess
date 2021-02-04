@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField]
+    string clickSound = "Click";
+
     public GameObject mainMenu;
     public GameObject optionsMenu;
+    AudioManager audioManager;
 
     void Start()
     {
+        audioManager = AudioManager.instance;
+        if(audioManager == null)
+        {
+            Debug.LogError("No audio manager.");
+        }
+
         MainMenuButton();
     }
 
@@ -32,5 +42,10 @@ public class MenuManager : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+    }
+
+    public void OnMouseDown()
+    {
+        audioManager.PlaySound(clickSound);
     }
 }
