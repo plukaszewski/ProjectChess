@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour, IOnMouseEnter, IOnMouseExit
     {
         transform.position += new Vector3(Vector.x, Vector.y, 0f);
 
+        AudioManager.instance.PlaySound("Move");
+
         DestroyIndicators();
     }
 
