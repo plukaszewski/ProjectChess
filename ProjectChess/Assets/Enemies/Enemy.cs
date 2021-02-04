@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour, IOnMouseEnter, IOnMouseExit
 
     private bool bIndicatorsSpawned = false;
 
+    public string deathSound = "DeathSound";
+
     public void Move(Vector2Int Vector)
     {
         transform.position += new Vector3(Vector.x, Vector.y, 0f);
