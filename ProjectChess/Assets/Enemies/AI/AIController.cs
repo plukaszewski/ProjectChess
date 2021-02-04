@@ -11,8 +11,7 @@ public class AIController : MonoBehaviour
     private int Iterator = 0;
     private int MovesPerTurnIterator = 0;
     private Enemy CurrentEnemy;
-
-
+    private List<UnityAction<List<Vector2Int>, List<Vector2Int>>> AISteps = new List<UnityAction<List<Vector2Int>, List<Vector2Int>>>();
 
     private bool AnyEnemiesLeft()
     {
@@ -58,7 +57,7 @@ public class AIController : MonoBehaviour
         }
         else
         {
-            //EndTurnCode
+            MovesPerTurnIterator = 0;
         }
     }
 
@@ -126,6 +125,7 @@ public class AIController : MonoBehaviour
                 if (Global.GridManager.ContainsElementWithTag(Element, "Player"))
                 {
                     Out.Add(Item);
+                    break;
                 }
             }
         }
@@ -133,33 +133,71 @@ public class AIController : MonoBehaviour
 
     private void Defend(List<Vector2Int> AvailablePositions, List<Vector2Int> Out)
     {
+        Out.Clear();
 
+        int TotalMax = 0;
+
+        foreach (var Item in AvailablePositions)
+        {
+            int LocalMax = 0;
+            foreach (var Element in CurrentEnemy.MovementPattern.GetIndicatorsPositions(Item, CurrentEnemy.GridIndicatorPrefabDefend.IndicatorTags))
+            {
+                if (Global.GridManager.ContainsElementWithTag(Element, "Enemy"))
+                {
+                    LocalMax++;
+                }
+            }
+            if(LocalMax > TotalMax)
+            {
+                TotalMax = LocalMax;
+                Out.Clear();
+                Out.Add(Item);
+            }
+            else if(LocalMax == TotalMax)
+            {
+                Out.Add(Item);
+            }
+        }
     }
 
     private void MostDefendedPosition(List<Vector2Int> AvailablePositions, List<Vector2Int> Out)
     {
-
+        Debug.Log("Not Implemented");
     }
 
     private void Nearest(List<Vector2Int> AvailablePositions, List<Vector2Int> Out)
     {
+        Out.Clear();
 
+        float TotalMin = 100;
+
+        foreach (var Item in AvailablePositions)
+        {
+            float LocalMin = Vector2Int.Distance(Item, Global.GameManager.Player.GetComponent<GridElement>().GetPosition());
+
+            if(LocalMin < TotalMin)
+            {
+                TotalMin = LocalMin;
+                Out.Clear();
+                Out.Add(Item);
+            }
+            else if (LocalMin == TotalMin)
+            {
+                Out.Add(Item);
+            }
+        }
     }
 
     public Vector2Int CalculateNewPosition(Enemy Enemy)
     {
         var ValidPositions = Enemy.MovementPattern.GetIndicatorsPositions(Enemy.GridElement.GetPosition(), Enemy.GridIndicatorPrefabAttack.IndicatorTags);
 
-        List<Vector2Int> NewPos = TryFunction(Capture, ValidPositions);
-
-        NewPos = TryFunction(AttackNextMove, NewPos);
-
-        if (NewPos.Count == 0)
+        foreach (var Item in AISteps)
         {
-            return new Vector2Int(-100, -100);
+            ValidPositions = TryFunction(Item, ValidPositions);
         }
 
-        return NewPos[0];
+        return ValidPositions[0];
 
             //var ValidPositions = Enemy.MovementPattern.GetIndicatorsPositions(Enemy.GridElement.GetPosition(), Enemy.GridIndicatorPrefabAttack.IndicatorTags);
             //Vector2Int? ReturnValue = null;
@@ -199,6 +237,10 @@ public class AIController : MonoBehaviour
     private void Awake()
     {
         Global.AIController = this;
+        AISteps.Add(Capture);
+        AISteps.Add(AttackNextMove);
+        AISteps.Add(Defend);
+        AISteps.Add(Nearest);
     }
 
     private void Setup()
