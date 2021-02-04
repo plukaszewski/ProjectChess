@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour, IOnMouseEnter, IOnMouseExit
         transform.position += new Vector3(Vector.x, Vector.y, 0f);
         GridElement.UpdateInGridManager();
 
+        AudioManager.instance.PlaySound("Move");
+
         DestroyIndicators();
 
         if (Global.GridManager.ContainsElementWithTag(GridElement.GetPosition(), "Player"))

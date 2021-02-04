@@ -35,10 +35,12 @@ public class Movement : MonoBehaviour
 
     public void Move(Vector2Int Vector)
     {
+        AudioManager.instance.PlaySound("Move");
         transform.position += new Vector3(Vector.x, Vector.y, 0f);
 
         if(Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(transform.position), "Enemy"))
         {
+
             foreach(var Item in Global.GridManager.GetElements(Global.Vector3ToVector2Int(transform.position)))
             {
                 if(Item.Tags.Contains("Enemy"))
