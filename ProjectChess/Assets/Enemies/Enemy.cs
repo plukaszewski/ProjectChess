@@ -12,8 +12,17 @@ public class Enemy : MonoBehaviour, IOnMouseEnter, IOnMouseExit
     public void Move(Vector2Int Vector)
     {
         transform.position += new Vector3(Vector.x, Vector.y, 0f);
+        GridElement.UpdateInGridManager();
 
         DestroyIndicators();
+
+        if (Global.GridManager.ContainsElementWithTag(GridElement.GetPosition(), "Player"))
+        {
+            Global.GameManager.Player.Movement.LastCapturedEnemy = this;
+            Global.GameManager.Player.Movement.OnCapture.Invoke();
+            Global.GameManager.Player.GetComponent<Health>().Damage(1);
+            Destroy(gameObject);
+        }
     }
 
     public List<Vector2Int> GetPosition()

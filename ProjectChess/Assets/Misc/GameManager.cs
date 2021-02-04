@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private void OnRoomChange()
     {
-        ChangeTurn(true);
+        ChangeTurn(Global.GameManager.AIController.AnyEnemiesLeft());
     }
 
     private void ChangeTurn(bool PlayerTurn)
@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour
         AIController.TurnMade.AddListener(ChangeTurn);
         Level.OnChangeRoom.AddListener(OnRoomChange);
         ChangeTurn(true);
+    }
+
+    public void Die()
+    {
+        Destroy(Player.gameObject);
     }
 
     // Start is called before the first frame update
