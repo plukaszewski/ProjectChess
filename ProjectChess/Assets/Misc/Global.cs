@@ -29,6 +29,12 @@ public class Global : MonoBehaviour
         GlobalObject = this;
     }
 
+    private IEnumerator Delay(UnityAction Function, float Seconds)
+    {
+        yield return new WaitForSeconds(Seconds);
+        Function.Invoke();
+    }
+
     private IEnumerator Delay(UnityAction Function)
     {
         yield return new WaitForEndOfFrame();
@@ -40,8 +46,13 @@ public class Global : MonoBehaviour
         StartCoroutine(Delay(Function));
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void DelayFunction(UnityAction Function, float Seconds)
+    {
+        StartCoroutine(Delay(Function, Seconds));
+    }
+
+// Start is called before the first frame update
+void Start()
     {
         
     }
