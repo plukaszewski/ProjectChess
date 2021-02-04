@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public Vector2Int Size;
     public Vector2Int Offset;
     public Room CurrentRoom;
+
+    public UnityEvent OnChangeRoom;
 
     private int DirectionToIndex (Vector2Int Direction)
     {
@@ -83,6 +86,9 @@ public class LevelManager : MonoBehaviour
         Global.GameManager.Player.transform.position = CurrentRoom.PlayerSpawn.transform.position;
         CurrentRoom.PlayerSpawn.gameObject.SetActive(false);
         Global.GameManager.Player.Movement.End();
+
+        CurrentRoom.DisableEntrances();
+        OnChangeRoom.Invoke();
     }
 
     // Start is called before the first frame update

@@ -2,46 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, IClickable
+public class MovementIndicator : GridIndicator, IClickable, IOnMouseEnter, IOnMouseExit
 {
     public Movement MovementComponent;
-    [SerializeField] public SpriteRenderer Sprite;
     private bool Active;
 
-    private void Highlight(bool b)
+    
+
+    protected void Highlight(bool b)
     {
         Active = b;
 
-        if(b)
+        if (b)
         {
-            Sprite.color = new Color(1f, 1f, 1f, .8f);
+            Sprite.color = new Color(Sprite.color.r, Sprite.color.g, Sprite.color.b, .8f);
         }
         else
         {
-            Sprite.color = new Color(1f, 1f, 1f, .4f);
+            Sprite.color = new Color(Sprite.color.r, Sprite.color.g, Sprite.color.b, .4f);
         }
     }
 
     public void OnClick(int Button)
     {
         MovementComponent.Move(new Vector2Int((int)transform.localPosition.x, (int)transform.localPosition.y));
-    }
-
-    public void OnMouseEnter()
-    {
-        Highlight(true);
-    }
-
-    public void OnMouseExit()
-    {
-        Highlight(false);
-    }
-
-    public List<Vector2Int> GetPosition()
-    {
-        var Tmp = new List<Vector2Int>();
-            Tmp.Add(new Vector2Int((int)transform.position.x, (int)transform.position.y));
-        return Tmp;
     }
 
     private void OnDestroy()
@@ -57,8 +41,16 @@ public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, ICl
         Global.InputSystem.Subscribe(this as IOnMouseExit);
         Global.InputSystem.Subscribe(this as IClickable);
         Highlight(false);
+    }
 
+    public void OnMouseEnter()
+    {
+        Highlight(true);
+    }
 
+    public void OnMouseExit()
+    {
+        Highlight(false);
     }
 
     // Start is called before the first frame update
@@ -73,4 +65,22 @@ public class MovementIndicator : MonoBehaviour, IOnMouseEnter, IOnMouseExit, ICl
         
 
     }
+
+    //public void SpawnChildIndicator(Transform Object, MovementIndicator Indicator)
+    //{
+    //    foreach (Transform Item in Object)
+    //    {
+    //        if (Item.GetComponent<MovementPatternSquare>() != null
+    //            && Global.GameManager.Level.CurrentRoom.IsInLimits(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position))
+    //            && !Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position), "Obstacle"))
+    //        {
+    //            var Tmp = Instantiate(Indicator.MovementComponent.MovementIndicatorPrefab, Item.position + Indicator.MovementComponent.transform.position, new Quaternion(), Indicator.MovementComponent.transform);
+    //            Tmp.MovementComponent = Indicator.MovementComponent;
+    //            if (Global.GridManager.ContainsNoElementsWithOtherTag(Global.Vector3ToVector2Int(Item.position + Indicator.MovementComponent.transform.position), "VisualOnly"))
+    //            {
+    //                SpawnChildIndicator(Item, Tmp);
+    //            }
+    //        }
+    //    }
+    //}
 }

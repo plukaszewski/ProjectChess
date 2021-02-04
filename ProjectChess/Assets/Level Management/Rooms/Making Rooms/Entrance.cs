@@ -5,6 +5,7 @@ using UnityEngine;
 public class Entrance : MonoBehaviour, IClickable
 {
     public Vector2Int Direction;
+    private bool b = true;
 
     List<Vector2Int> IInputSystemInerface.GetPosition()
     {
@@ -19,9 +20,19 @@ public class Entrance : MonoBehaviour, IClickable
         return Tmp;
     }
 
-    void IClickable.OnClick(int Button)
+    void _OnClick()
     {
         Global.GameManager.Level.ChangeRoom(Direction);
+        b = true;
+    }
+
+    void IClickable.OnClick(int Button)
+    {
+        if(b)
+        {
+            Global.GlobalObject.DelayFunction(_OnClick);
+            b = false;
+        }
     }
 
     private void OnDestroy()

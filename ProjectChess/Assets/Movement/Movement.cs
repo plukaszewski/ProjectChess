@@ -1,27 +1,51 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Movement : MonoBehaviour
 {
+    public class OnCaptureEvent : UnityEvent<Enemy>
+    {
+
+    }
+
     [SerializeField] public MovementIndicator MovementIndicatorPrefab;
-    [SerializeField] public MovementPattern Pattern;
+    [SerializeField] public MovementPattern MovementPattern;
+
+    public UnityEvent OnMove;
+    [SerializeField] public OnCaptureEvent OnCapture = new OnCaptureEvent();
 
     //@TODO: rename
     public void Initialize()
     {
         End();
-        Pattern.Spawn(this);
+        foreach (var Item in MovementPattern.GetIndicatorsPositions(GetComponent<GridElement>().GetPosition(), MovementIndicatorPrefab.IndicatorTags))
+        {
+            var Tmp = Instantiate(MovementIndicatorPrefab, Global.Vector2IntToVector3(Item), new Quaternion(), transform);
+            Tmp.MovementComponent = this;
+        }
     }
 
-    //Actual movement, change this function to manage animation, leave current lines
     public void Move(Vector2Int Vector)
     {
-        //move itself
         transform.position += new Vector3(Vector.x, Vector.y, 0f);
 
-        //removing indicators
+        if(Global.GridManager.ContainsElementWithTag(Global.Vector3ToVector2Int(transform.position), "Enemy"))
+        {
+            foreach(var Item in Global.GridManager.GetElements(Global.Vector3ToVector2Int(transform.position)))
+            {
+                if(Item.Tags.Contains("Enemy"))
+                {
+                    OnCapture.Invoke(Item.GetComponent<Enemy>());
+                    Destroy(Item.gameObject);
+                }
+            }
+        }
+
         End();
+
+        OnMove.Invoke();
     }
 
     public void End()

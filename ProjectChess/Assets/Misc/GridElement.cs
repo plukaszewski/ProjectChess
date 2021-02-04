@@ -35,6 +35,11 @@ public class GridElement : MonoBehaviour
         return GridPosition;
     }
 
+    private void OnDestroy()
+    {
+        Global.GridManager.RemoveElement(this);
+    }
+
     private void Awake()
     {
         
