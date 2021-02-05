@@ -8,6 +8,7 @@ public class Room : MonoBehaviour
     public InputSystem InputSystem;
     public PlayerSpawn PlayerSpawn;
     public Vector4 Limits;
+    public bool IsCleared = false;
 
     public Entrance[] Entrances;
 

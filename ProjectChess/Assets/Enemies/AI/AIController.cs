@@ -39,6 +39,7 @@ public class AIController : MonoBehaviour
         if(!AnyEnemiesLeft())
         {
             Global.GlobalObject.DelayFunction(Global.GameManager.Level.CurrentRoom.EnableEntrances);
+            Global.GameManager.Level.CurrentRoom.IsCleared = true;
         }
     }
 
@@ -54,9 +55,20 @@ public class AIController : MonoBehaviour
         }
     }
 
+    private void TryClearRoom()
+    {
+        if (!Global.GameManager.AIController.AnyEnemiesLeft())
+        {
+            Global.GameManager.Level.CurrentRoom.IsCleared = true;
+        }
+        Global.GameManager.Level.CheckForWin();
+    }
+
     private void OnCapture()
     {
-        if(Enemies.FindIndex(CompareEnemy) < Iterator)
+        Global.GlobalObject.DelayFunction(TryClearRoom);
+
+        if (Enemies.FindIndex(CompareEnemy) < Iterator)
         {
             Iterator--;
         }

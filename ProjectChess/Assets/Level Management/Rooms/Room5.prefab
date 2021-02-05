@@ -183,6 +183,7 @@ MonoBehaviour:
   InputSystem: {fileID: 0}
   PlayerSpawn: {fileID: 7952478299759886460}
   Limits: {x: 3, y: 3, z: -4, w: -4}
+  IsCleared: 0
   Entrances:
   - {fileID: 2836802161389739522}
   - {fileID: 2825899294880809150}

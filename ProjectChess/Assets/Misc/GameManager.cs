@@ -12,8 +12,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public GameObject pauseMenu;
 
-    public delegate void PauseMenuCallback(bool active);
-    public PauseMenuCallback onTogglePauseMenu;
+    //public delegate void PauseMenuCallback(bool active);
+    //public PauseMenuCallback onTogglePauseMenu = new PauseMenuCallback(;
+
+    public UnityEvent onTogglePauseMenu;
+    public bool IsGamePaused;
 
     public LevelManager Level;
     public PlayerController Player;
@@ -33,6 +36,11 @@ public class GameManager : MonoBehaviour
 
     private void ChangeTurn()
     {
+        if(Player == null)
+        {
+            return;
+        }
+
         IsPlayerTurn = !IsPlayerTurn;
 
         if (IsPlayerTurn)
@@ -63,7 +71,15 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
+        Pause();
+        gameOver.SetActive(true);
         Destroy(Player.gameObject);
+    }
+
+    public void Win()
+    {
+        Pause();
+        gameWon.SetActive(true);
     }
 
     // Start is called before the first frame update
@@ -72,7 +88,7 @@ public class GameManager : MonoBehaviour
         Player = Instantiate(Player, Level.Rooms[0].transform.position, new Quaternion());
         Global.GridManager = Level.Rooms[0].GetComponent<GridManager>();
         Global.GlobalObject.DelayFunction(Setup);
-        
+        UnPause();
     }
 
     // Update is called once per frame
@@ -84,10 +100,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Pause()
+    {
+        Time.timeScale = 0;
+        IsGamePaused = true;
+    }
+
+    private void UnPause()
+    {
+        Time.timeScale = 1;
+        IsGamePaused = false;
+    }
+
     private void TogglePauseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
-        onTogglePauseMenu.Invoke(pauseMenu.activeSelf);
+        if(pauseMenu.activeSelf)
+        {
+            Pause();
+        }
+        else
+        {
+            UnPause();
+        }
+        onTogglePauseMenu.Invoke();
     }
 
     public void EndGame()

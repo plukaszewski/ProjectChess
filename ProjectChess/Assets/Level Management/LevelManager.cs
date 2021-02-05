@@ -101,6 +101,29 @@ public class LevelManager : MonoBehaviour
         OnChangeRoom.Invoke();
     }
 
+    public void CheckForWin()
+    {
+        Debug.Log(1);
+        if (IsEveryRoomCleared())
+        {
+            Debug.Log(2);
+
+            Global.GameManager.Win();
+        }
+    }
+
+    private bool IsEveryRoomCleared()
+    {
+        foreach(var Item in Rooms)
+        {
+            if(!Item.IsCleared)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

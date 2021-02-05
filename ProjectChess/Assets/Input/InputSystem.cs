@@ -49,42 +49,45 @@ public class InputSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 Tmp = Global.Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-
-        Vector2Int NewMousePosition = new Vector2Int(Tmp.x > 0 ? (int)Tmp.x : (int)Tmp.x - 1, Tmp.y > 0 ? (int)Tmp.y : (int)Tmp.y - 1);
-
-        if (MousePosition != NewMousePosition)
+        if (!Global.GameManager.IsGamePaused)
         {
-            foreach (var Item in OnMouseExitObjects)
+            Vector3 Tmp = Global.Camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+            Vector2Int NewMousePosition = new Vector2Int(Tmp.x > 0 ? (int)Tmp.x : (int)Tmp.x - 1, Tmp.y > 0 ? (int)Tmp.y : (int)Tmp.y - 1);
+
+            if (MousePosition != NewMousePosition)
             {
-                if (Item.GetPosition().Contains(MousePosition))
-                    Item.OnMouseExit();
+                foreach (var Item in OnMouseExitObjects)
+                {
+                    if (Item.GetPosition().Contains(MousePosition))
+                        Item.OnMouseExit();
+                }
+
+                foreach (var Item in OnMouseEnterObjects)
+                {
+                    if (Item.GetPosition().Contains(NewMousePosition))
+                        Item.OnMouseEnter();
+                }
             }
 
-            foreach (var Item in OnMouseEnterObjects)
+            MousePosition = NewMousePosition;
+
+            if (Input.GetMouseButtonDown(0))
             {
-                if (Item.GetPosition().Contains(NewMousePosition))
-                    Item.OnMouseEnter();
+                foreach (var Item in ClickableObjects)
+                {
+                    if (Item.GetPosition().Contains(MousePosition))
+                        Item.OnClick(0);
+                }
             }
-        }
 
-        MousePosition = NewMousePosition;
-
-        if(Input.GetMouseButtonDown(0))
-        {
-            foreach (var Item in ClickableObjects)
+            if (Input.GetMouseButtonDown(1))
             {
-                if (Item.GetPosition().Contains(MousePosition))
-                    Item.OnClick(0);
-            }
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            foreach (var Item in ClickableObjects)
-            {
-                if (Item.GetPosition().Contains(MousePosition))
-                    Item.OnClick(1);
+                foreach (var Item in ClickableObjects)
+                {
+                    if (Item.GetPosition().Contains(MousePosition))
+                        Item.OnClick(1);
+                }
             }
         }
     }
