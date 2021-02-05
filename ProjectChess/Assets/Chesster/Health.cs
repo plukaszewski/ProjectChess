@@ -56,6 +56,7 @@ public class Health : MonoBehaviour, IUIBarReadable
         if(Amount > 0)
         {
             CurrentHealth -= Amount;
+            AudioManager.instance.PlaySound("DeathSound");
             OnValueChange.Invoke();
 
             if (CurrentHealth <= 0)

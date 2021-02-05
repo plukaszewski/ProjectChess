@@ -31,7 +31,6 @@ public class UIBar : MonoBehaviour
 
     void OnValueChange()
     {
-        Debug.Log(1);
         Current.rectTransform.offsetMax = new Vector2(Source.GetCurrentValue(), 0f) * ElementSize;
     }
 

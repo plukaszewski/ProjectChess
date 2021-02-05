@@ -64,7 +64,6 @@ public class AIController : MonoBehaviour
         Enemies.Remove(Global.GameManager.Player.Movement.LastCapturedEnemy);
         AudioManager.instance.PlaySound("DeathSound");
 
-        Enemies.Remove(Enemy);
         if(!AnyEnemiesLeft())
         {
             Global.GlobalObject.DelayFunction(Global.GameManager.Level.CurrentRoom.EnableEntrances);

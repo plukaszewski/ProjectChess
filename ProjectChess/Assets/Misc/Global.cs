@@ -41,6 +41,15 @@ public class Global : MonoBehaviour
         Function.Invoke();
     }
 
+    private IEnumerator WaitForFrames(UnityAction Function, int Frames)
+    {
+        for(int i = 0; i < Frames; i++)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        Function.Invoke();
+    }
+
     public void DelayFunction(UnityAction Function)
     {
         StartCoroutine(Delay(Function));
@@ -51,8 +60,13 @@ public class Global : MonoBehaviour
         StartCoroutine(Delay(Function, Seconds));
     }
 
-// Start is called before the first frame update
-void Start()
+    public void DelayFunctionForFrames(UnityAction Function, int Frames)
+    {
+        StartCoroutine(WaitForFrames(Function, Frames));
+    }
+
+    // Start is called before the first frame update
+    void Start()
     {
         
     }

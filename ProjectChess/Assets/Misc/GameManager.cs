@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         Player.Movement.OnMove.AddListener(ChangeTurn);
         AIController.TurnMade.AddListener(ChangeTurn);
         Level.OnChangeRoom.AddListener(OnRoomChange);
-        ChangeTurn(true);
+        //ChangeTurn(true);
     }
 
     public void Die()
