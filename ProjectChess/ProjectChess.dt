@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT16M34.7547053S" SolutionTotalViewTime="PT34M14.0977567S" SolutionTotalDebugTime="PT0S">
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT21M42.7987332S" SolutionTotalViewTime="PT40M11.1274746S" SolutionTotalDebugTime="PT0S">
   <FileVersion>
     <Major>1</Major>
     <Minor>0</Minor>
@@ -14,78 +14,57 @@
   </ProjectsCreatedDateList>
   <SessionTimeList />
   <LastSessionTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1M52.6063146S" EditActiveTime="PT33.0589243S">
-      <ModifiedDate>2021-02-05T00:03:30.3901389+01:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT4M43.6853132S" EditActiveTime="PT4M0.0314933S">
+      <ModifiedDate>2021-02-05T02:46:14.8689646+01:00</ModifiedDate>
       <ModifiedBy>mikol</ModifiedBy>
       <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Enemies\AI\AIController.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
-      <CreatedDate>2021-02-04T23:54:07.4706087+01:00</CreatedDate>
-      <ViewedBy>mikol</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT50.4552732S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Scripts\AudioManager.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
-      <CreatedDate>2021-02-04T23:55:30.4285369+01:00</CreatedDate>
-      <ViewedBy>mikol</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT35.7258274S" EditActiveTime="PT18.0273009S">
-      <ModifiedDate>2021-02-05T00:22:40.1332543+01:00</ModifiedDate>
-      <ModifiedBy>mikol</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Enemies\Enemy.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
-      <CreatedDate>2021-02-05T00:20:37.906752+01:00</CreatedDate>
-      <ViewedBy>mikol</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT30.4334881S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Misc\GameManager.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
-      <CreatedDate>2021-02-04T23:55:19.6760551+01:00</CreatedDate>
+      <CreatedDate>2021-02-05T02:39:44.1073727+01:00</CreatedDate>
       <ViewedBy>mikol</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT14.3054137S" EditActiveTime="PT45.3979008S">
-      <ModifiedDate>2021-02-05T00:02:58.2906058+01:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT8.862296S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\GameOverUI.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:36:47.4561018+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT7.5898533S" EditActiveTime="PT0.9107381S">
+      <ModifiedDate>2021-02-05T02:37:04.3882432+01:00</ModifiedDate>
       <ModifiedBy>mikol</ModifiedBy>
       <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\GameWonUI.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:36:57.3836324+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT39.256486S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Level Management\LevelManager.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
-      <CreatedDate>2021-02-04T23:56:07.3471477+01:00</CreatedDate>
+      <CreatedDate>2021-02-05T02:39:10.2092279+01:00</CreatedDate>
       <ViewedBy>mikol</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M2.464082S" EditActiveTime="PT20.7205179S">
-      <ModifiedDate>2021-02-05T00:24:36.5681998+01:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT17.6402529S" EditActiveTime="PT1M7.1022954S">
+      <ModifiedDate>2021-02-05T02:57:43.4664917+01:00</ModifiedDate>
       <ModifiedBy>mikol</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Movement\Movement.cs</Item>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\PauseScreenUI.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
-      <CreatedDate>2021-02-05T00:05:49.7542262+01:00</CreatedDate>
-      <ViewedBy>mikol</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT6.5754928S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Movement\Insides\MovementIndicator.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
-      <CreatedDate>2021-02-05T00:20:56.0768537+01:00</CreatedDate>
+      <CreatedDate>2021-02-05T02:50:11.5257931+01:00</CreatedDate>
       <ViewedBy>mikol</ViewedBy>
     </DevTrackerDataItem>
   </LastSessionTimeList>
@@ -134,21 +113,43 @@
       <CreatedDate>2021-02-04T20:46:28.1950021+01:00</CreatedDate>
       <ViewedBy>mikol</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M3.1762341S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>3</ViewedCount>
+    <DevTrackerDataItem ViewActiveTime="PT5M46.8565553S" EditActiveTime="PT4M0.0314933S">
+      <ModifiedDate>2021-02-05T02:46:14.8689646+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>4</ViewedCount>
       <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Misc\GameManager.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
       <CreatedDate>2021-02-04T20:48:34.0723386+01:00</CreatedDate>
       <ViewedBy>mikol</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M7.4196523S" EditActiveTime="PT1M21.2814928S">
+    <DevTrackerDataItem ViewActiveTime="PT8.862296S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\GameOverUI.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:36:47.4561018+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT7.5898533S" EditActiveTime="PT0.9107381S">
+      <ModifiedDate>2021-02-05T02:37:04.3882432+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\GameWonUI.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:36:57.3836324+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M46.6761383S" EditActiveTime="PT1M21.2814928S">
       <ModifiedDate>2021-02-05T00:02:58.2906058+01:00</ModifiedDate>
       <ModifiedBy>mikol</ModifiedBy>
       <EditedCount>3</EditedCount>
-      <ViewedCount>3</ViewedCount>
+      <ViewedCount>4</ViewedCount>
       <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Level Management\LevelManager.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
@@ -187,8 +188,72 @@
       <CreatedDate>2021-02-04T20:42:49.2376212+01:00</CreatedDate>
       <ViewedBy>mikol</ViewedBy>
     </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT17.6402529S" EditActiveTime="PT1M7.1022954S">
+      <ModifiedDate>2021-02-05T02:57:43.4664917+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\PauseScreenUI.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:50:11.5257931+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
   </TotalTimeList>
   <HistoryTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT17.6402529S" EditActiveTime="PT1M7.1022954S">
+      <ModifiedDate>2021-02-05T02:57:43.4664917+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\PauseScreenUI.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:50:11.5257931+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M43.6818186S" EditActiveTime="PT4M0.0314933S">
+      <ModifiedDate>2021-02-05T02:46:14.8689646+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Misc\GameManager.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:39:44.1073727+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT39.256486S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\Level Management\LevelManager.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:39:10.2092279+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT7.5898533S" EditActiveTime="PT0.9107381S">
+      <ModifiedDate>2021-02-05T02:37:04.3882432+01:00</ModifiedDate>
+      <ModifiedBy>mikol</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\GameWonUI.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:36:57.3836324+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT8.862296S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assets\GameOverUI.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\mikol\Desktop\projekt zespołowy2\ProjectChess\ProjectChess\Assembly-CSharp.csproj</ProjectName>
+      <CreatedDate>2021-02-05T02:36:47.4561018+01:00</CreatedDate>
+      <ViewedBy>mikol</ViewedBy>
+    </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT6.5754928S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
