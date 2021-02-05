@@ -5,6 +5,16 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject gameOver;
+    [SerializeField]
+    public GameObject gameWon;
+    [SerializeField]
+    public GameObject pauseMenu;
+
+    public delegate void PauseMenuCallback(bool active);
+    public PauseMenuCallback onTogglePauseMenu;
+
     public LevelManager Level;
     public PlayerController Player;
     public AIController AIController;
@@ -68,6 +78,27 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePauseMenu();
+        }
+    }
+
+    private void TogglePauseMenu()
+    {
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+        onTogglePauseMenu.Invoke(pauseMenu.activeSelf);
+    }
+
+    public void EndGame()
+    {
+        Debug.Log("GAME OVER");
+        gameOver.SetActive(true);
+    }
+
+    public void EndWin()
+    {
+        Debug.Log("Game Ended.");
+        gameWon.SetActive(true);
     }
 }
