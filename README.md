@@ -17,7 +17,7 @@ Kluczowe założenia projektu:
 * proceduralnie generowane poziomy z wcześniej przygotowanych pomieszczeń
 * pasująca oprawa dźwiękowa
 
-Osobu pracujące na projektem:
+Osoby pracujące na projektem:
 * Paweł Łukaszewski - programista, odpowiedzialny za zaimplementowanie mechanik i zarządzanie projektem
 * Daniel Małolepszy - grafik, odpowiedzialny za oprawę graficzną i animacje
 * Mikołaj Marcińczak - dźwiękowiec, odpowiedzialny za oprawę dźwiękową i UI
