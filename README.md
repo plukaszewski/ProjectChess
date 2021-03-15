@@ -21,3 +21,5 @@ Osoby pracujące na projektem:
 * Paweł Łukaszewski - programista, odpowiedzialny za zaimplementowanie mechanik i zarządzanie projektem
 * Daniel Małolepszy - grafik, odpowiedzialny za oprawę graficzną i animacje
 * Mikołaj Marcińczak - dźwiękowiec, odpowiedzialny za oprawę dźwiękową i UI
+
+![ProjectChess](images/ProjectChess.jpg) ![ProjectChess2](images/ProjectChess2.jpg) ![ProjectChess3](images/ProjectChess3.jpg)
